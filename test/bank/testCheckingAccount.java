@@ -24,7 +24,7 @@ public class testCheckingAccount {
     a = new CheckingAccount(20.345);
 
   }
-  
+
   /**
    * general test.
    */
@@ -55,7 +55,7 @@ public class testCheckingAccount {
         b = new CheckingAccount(0.000005);
         c = new CheckingAccount(-10.21);
         b.deposit(-2.23);
-    }
+      }
     );
 
   }
