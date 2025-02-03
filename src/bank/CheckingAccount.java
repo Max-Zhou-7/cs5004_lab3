@@ -53,7 +53,7 @@ public class CheckingAccount implements IAccount {
     else {
       this.starterAmount -= withdraw;
       if (getBalance() < 100);
-      {testLess = true;}
+      { testLess = true; }
       return true;
     }
   }

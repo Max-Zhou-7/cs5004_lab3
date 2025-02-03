@@ -1,4 +1,5 @@
 package bank;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Assert;
@@ -53,7 +54,7 @@ public class testSavingsAccount {
   @Test
   public void testException() {
     Assert.assertThrows(IllegalArgumentException.class,
-            ()->{
+            () -> {
               b = new SavingsAccount(0.000005);
               c = new SavingsAccount(-10.21);
               b.deposit(-2.23);

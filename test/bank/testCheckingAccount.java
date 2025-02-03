@@ -1,6 +1,6 @@
 package bank;
-import static org.junit.Assert.assertEquals;
 
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -22,10 +22,11 @@ public class testCheckingAccount {
   @Before
   public void setup() {
     a = new CheckingAccount(20.345);
+
+  }
   /**
    * general test.
    */
-  }
   @Test
   public void testGeneral() {
     a.deposit(1.1);
@@ -49,12 +50,12 @@ public class testCheckingAccount {
   @Test
   public void testException() {
     Assert.assertThrows(IllegalArgumentException.class,
-              ()->{
+              () -> {
         b = new CheckingAccount(0.000005);
         c = new CheckingAccount(-10.21);
         b.deposit(-2.23);
 
-    });
+    } );
 
   }
 }
