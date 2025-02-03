@@ -18,7 +18,7 @@ public class CheckingAccount implements IAccount {
     }
 
     this.starterAmount = starterAmount;
-
+    testLess();
   }
 
   /**
@@ -41,6 +41,7 @@ public class CheckingAccount implements IAccount {
    */
   @Override
   public boolean withdraw(double withdraw) {
+    testLess();
     if (withdraw > this.starterAmount) {
       return false;
     }
@@ -59,12 +60,18 @@ public class CheckingAccount implements IAccount {
     return this.starterAmount;
   }
 
+  public boolean testLess() {
+    if ( getBalance() < 100 ) {
+      return true;
+    }
+    return false;
+  }
   /**
    * Perform Maintenance.
    */
   @Override
   public void performMonthlyMaintenance() {
-    if (getBalance() < 100) {
+    if (testLess()) {
       this.starterAmount -= 5;
     }
   }
