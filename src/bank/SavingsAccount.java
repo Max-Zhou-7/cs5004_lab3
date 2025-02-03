@@ -41,7 +41,7 @@ public class SavingsAccount implements IAccount {
    */
   @Override
   public boolean withdraw(double withdraw) {
-    if (withdraw > this.starterAmount) {
+    if (withdraw > this.starterAmount || withdraw <= 0) {
       return false;
     }
     else {
