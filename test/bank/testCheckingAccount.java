@@ -38,9 +38,9 @@ public class testCheckingAccount {
     assertEquals(15.0, a.getBalance(),delta);
     a.deposit(100);
     a.performMonthlyMaintenance();
-    assertEquals(115.0, a.getBalance(),delta);
+    assertEquals(110.0, a.getBalance(),delta);
 
-    assertEquals("$115.00", a.toString());
+    assertEquals("$110.00", a.toString());
   }
 
   /**

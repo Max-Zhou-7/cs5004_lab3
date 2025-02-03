@@ -7,6 +7,7 @@ import java.text.DecimalFormat;
  */
 public class CheckingAccount implements IAccount {
   private double starterAmount;
+  boolean testLess;
 
   /**
    * constructor.
@@ -18,7 +19,9 @@ public class CheckingAccount implements IAccount {
     }
 
     this.starterAmount = starterAmount;
-    testLess();
+    if (this.starterAmount < 100) {
+      testLess = true;
+    }
   }
 
   /**
@@ -41,12 +44,14 @@ public class CheckingAccount implements IAccount {
    */
   @Override
   public boolean withdraw(double withdraw) {
-    testLess();
+
     if (withdraw > this.starterAmount) {
       return false;
     }
     else {
       this.starterAmount -= withdraw;
+      if (getBalance() < 100);
+      {testLess = true;}
       return true;
     }
   }
@@ -60,18 +65,13 @@ public class CheckingAccount implements IAccount {
     return this.starterAmount;
   }
 
-  public boolean testLess() {
-    if ( getBalance() < 100 ) {
-      return true;
-    }
-    return false;
-  }
+
   /**
    * Perform Maintenance.
    */
   @Override
   public void performMonthlyMaintenance() {
-    if (testLess()) {
+    if (testLess) {
       this.starterAmount -= 5;
     }
   }
