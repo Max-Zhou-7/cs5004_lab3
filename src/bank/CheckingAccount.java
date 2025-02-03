@@ -45,7 +45,8 @@ public class CheckingAccount implements IAccount {
   @Override
   public boolean withdraw(double withdraw) {
     if (withdraw <= 0) {
-      throw new IllegalArgumentException("Amount cannot be negative or zero!");
+      //throw new IllegalArgumentException("Amount cannot be negative or zero!");
+      return false;
     }
     if (withdraw > this.starterAmount) {
       return false;
